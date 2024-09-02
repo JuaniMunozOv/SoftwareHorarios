@@ -7,6 +7,9 @@ import ttkbootstrap as ttk
 from ttkbootstrap.icons import Icon
 from ttkbootstrap.constants import *
 import pandas as pd
+import openpyxl
+from openpyxl.styles import PatternFill
+
 class HorariosApp:
     def __init__(self, root):
         self.root = root
@@ -440,6 +443,13 @@ class DocentesApp:
             checkbox.grid(row=1, column=j + 1, padx=5, pady=5)
             self.checkbox_vars[grupo['nombre']][f"{dia} Seleccionar todo"] = var
 
+        # Create a frame for the "Seleccionar todo" checkboxes
+        select_all_frame = ttk.Frame(frame, borderwidth=2, relief="solid")
+        select_all_frame.grid(row=1, column=0, padx=5, pady=5)
+
+        # Add label and checkboxes to the "Seleccionar todo" frame
+        tk.Label(select_all_frame, text="Seleccionar todo").pack()
+
         for i, horario in enumerate(horarios):
             tk.Label(frame, text=horario).grid(row=i + 2, column=0, padx=5, pady=5)
             for j, dia in enumerate(dias):
@@ -573,7 +583,6 @@ class DocentesApp:
         # Añadir una scrollbar vertical al contenedor
         scrollbar_y = ttk.Scrollbar(container_frame, orient="vertical", command=canvas.yview)
         scrollbar_y.pack(side=tk.RIGHT, fill=tk.Y)
-
         # Añadir una scrollbar horizontal al contenedor
         scrollbar_x = ttk.Scrollbar(container_frame, orient="horizontal", command=canvas.xview)
         scrollbar_x.pack(side=tk.BOTTOM, fill=tk.X)
@@ -632,9 +641,10 @@ class DocentesApp:
                 for dia in dias:
                     fila[dia] = ""
                 horarios.append(fila)
+            # Agrega una fila en blanco entre grupos
             horarios.append({"Grupo": "", "Horario": "", "Lunes": "", "Martes": "", "Miércoles": "", "Jueves": "", "Viernes": ""})
 
-        # Asignar horarios
+        # Asignar horarios a cada grupo y asignatura
         for grupo in self.grupos:
             grupo_nombre = grupo['nombre']
             for docente in self.docentes:
@@ -646,6 +656,7 @@ class DocentesApp:
                             self.asignar_horas_asignatura(horarios, grupo_nombre, docente, asignatura, combinaciones_horas, dias, superposiciones)
 
         self.exportar_horarios_excel(horarios, superposiciones)
+
         if superposiciones:
             messagebox.showwarning("Superposiciones Detectadas", "\n".join(superposiciones))
         else:
@@ -675,8 +686,9 @@ class DocentesApp:
                         break  # Salir si se asignaron todas las horas
                 if horas_asignadas >= sum(combinacion):
                     break   
-
+    
     def intentar_asignar_combinacion(self, horarios, grupo_nombre, docente, asignatura, combinacion, dias, superposiciones):
+        """Intenta asignar una combinación de horas en cualquier día disponible."""
         for dia in dias:
             horas_disponibles = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia)
             if len(horas_disponibles) >= len(combinacion):
@@ -685,12 +697,14 @@ class DocentesApp:
         return False
 
     def obtener_horas_disponibles(self, horarios, grupo_nombre, docente, dia):
+        """Obtiene las horas disponibles para un docente en un grupo y día específicos."""
         return [fila['Horario'] for fila in horarios if fila['Grupo'] == grupo_nombre and 
                 fila[dia] == "" and 
                 docente['disponibilidad'][grupo_nombre].get(f"{dia} {fila['Horario']}", tk.IntVar()).get() == 1 and
                 not self.docente_ocupado_en_otro_grupo(horarios, docente, dia, fila['Horario'])]
 
     def docente_ocupado_en_otro_grupo(self, horarios, docente, dia, horario):
+        """Verifica si el docente ya está ocupado en otro grupo en el mismo horario."""
         for fila in horarios:
             if fila['Horario'] == horario and fila[dia].endswith(f"({docente['nombre']})"):
                 return True
@@ -727,13 +741,16 @@ class DocentesApp:
             return [(3, 2)]  # 3 horas juntas en un día y 2 en otro
         return []
 
+
     def exportar_horarios_excel(self, horarios, superposiciones):
+        """Exporta los horarios generados a un archivo de Excel."""
         df = pd.DataFrame(horarios)
         filepath = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx"), ("All files", "*.*")])
         if filepath:
             with pd.ExcelWriter(filepath, engine='xlsxwriter') as writer:
                 df.to_excel(writer, sheet_name='Horarios', index=False)
 
+                # Escribir superposiciones si existen
                 if superposiciones:
                     ws = writer.book.add_worksheet('Superposiciones')
                     for i, sup in enumerate(superposiciones, start=1):
