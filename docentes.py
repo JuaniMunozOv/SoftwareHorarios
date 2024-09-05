@@ -329,7 +329,7 @@ class DocentesApp:
         self.grupos = grupos
         ### ACA ESTA EL CAMBIO: Agregué los docentes que llegué a hardcodear, funciona. 
         self.docentes = [
-                        {'nombre': 'Alejandra Galli',
+                        {'nombre': 'Alejandra Galli', #
                         'grupos': [
                             {
                                 'nombre': '7A',
@@ -805,7 +805,7 @@ class DocentesApp:
                             },
                         }
                         },
-                        {'nombre': 'Lucia Martinez',
+                        {'nombre': 'Lucia Martinez', #
                         'grupos': [
                             {
                                 'nombre': '7A',
@@ -1435,10 +1435,10 @@ class DocentesApp:
                             '8A': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=0),
+                                'Cs Computacion': tk.IntVar(value=1),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -1449,10 +1449,10 @@ class DocentesApp:
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=0),
+                                'Cs Computacion': tk.IntVar(value=1),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -1463,10 +1463,10 @@ class DocentesApp:
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=0),
+                                'Cs Computacion': tk.IntVar(value=1),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2422,7 +2422,7 @@ class DocentesApp:
                             }
                         }
                         },
-                        {'nombre': 'Rogelio Giró ',
+                        {'nombre': 'Rogelio Giró ', #
                         'grupos': [
                             {
                                 'nombre': '8A',
@@ -2629,8 +2629,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Geografia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2643,8 +2643,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Geografia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2657,8 +2657,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Geografia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2909,7 +2909,7 @@ class DocentesApp:
                             },
                         }
                         },
-                        {'nombre': 'Stephanie Grego',
+                        {'nombre': 'Stephanie Grego',#
                         'grupos': [
                             {
                                 'nombre': '7A',
@@ -3280,11 +3280,11 @@ class DocentesApp:
                             },
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=0),
+                                'Biologia': tk.IntVar(value=1),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -3786,10 +3786,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=0),
+                                'Matematica': tk.IntVar(value=1),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -4473,7 +4473,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -4487,7 +4487,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -4501,7 +4501,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5143,11 +5143,11 @@ class DocentesApp:
                         'asignaturas': {
                             '8A': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=0),
+                                'Biologia': tk.IntVar(value=1),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5157,11 +5157,11 @@ class DocentesApp:
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=0),
+                                'Biologia': tk.IntVar(value=1),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5504,7 +5504,7 @@ class DocentesApp:
                             },
                         }
                         },
-                        {'nombre': 'Nestor Lucas',
+                        {'nombre': 'Nestor Lucas', #
                         'grupos': [
                             {
                                 'nombre': '8A',
@@ -5531,29 +5531,6 @@ class DocentesApp:
                             },
                             {
                                 'nombre': '8B',
-                                'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
-                                'carga_horaria': {
-                                    'Tecnologia': 5,
-                                    'Biologia': 3,
-                                    'Ed Fisica': 2,
-                                    'Arte': 3,
-                                    'Sexualidad': 2,
-                                    'Geografia': 3,
-                                    'Historia': 2,
-                                    'Lengua': 4,
-                                    'Cs Computacion': 2,
-                                    'Ingles': 4,
-                                    'Fisico-Quimica': 2,
-                                    'Matematica': 5
-                                },
-                                'horarios': [
-                                    '7:15 - 7:55', '7:55 - 8:35', '8:45 - 9:35', '9:35 - 10:15', '10:15 - 10:55',
-                                    '11:05 - 11:50', '11:55 - 12:35', '12:35 - 13:15'
-                                ]
-                            },
-                            {
-                                'nombre': '8C',
                                 'turno': 'Matutino',
                                 'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
@@ -5669,10 +5646,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=0),
+                                'Matematica': tk.IntVar(value=1),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -5683,10 +5660,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=0),
+                                'Matematica': tk.IntVar(value=1),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -5771,8 +5748,8 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
-                                'Ingles': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=0),
+                                'Ingles': tk.IntVar(value=1),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
@@ -6169,9 +6146,9 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
-                                'Lengua': tk.IntVar(value=0),
+                                'Lengua': tk.IntVar(value=1),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
@@ -6183,9 +6160,9 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
-                                'Lengua': tk.IntVar(value=0),
+                                'Lengua': tk.IntVar(value=1),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
@@ -6439,7 +6416,7 @@ class DocentesApp:
                             }
                         }
                         },
-                        {'nombre': 'Ana Ferreira Campanella',
+                        {'nombre': 'Ana Ferreira Campanella', #
                         'grupos': [
                             {
                                 'nombre': '7B',
@@ -6795,12 +6772,12 @@ class DocentesApp:
                                 'Tecnologia': tk.IntVar(value=0)
                             },
                             '8A': {
-                                'Arte': tk.IntVar(value=0),
+                                'Arte': tk.IntVar(value=1),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -6809,12 +6786,12 @@ class DocentesApp:
                                 'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
-                                'Arte': tk.IntVar(value=0),
+                                'Arte': tk.IntVar(value=1),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -6823,12 +6800,12 @@ class DocentesApp:
                                 'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8C': {
-                                'Arte': tk.IntVar(value=0),
+                                'Arte': tk.IntVar(value=1),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
