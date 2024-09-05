@@ -400,7 +400,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -412,6 +412,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -422,7 +423,7 @@ class DocentesApp:
                             {
                                 'nombre': '8B',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -434,6 +435,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -444,7 +446,7 @@ class DocentesApp:
                             {
                                 'nombre': '8C',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -456,6 +458,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -769,7 +772,8 @@ class DocentesApp:
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
@@ -782,7 +786,8 @@ class DocentesApp:
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
@@ -795,7 +800,8 @@ class DocentesApp:
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
@@ -870,7 +876,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -882,6 +888,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -892,7 +899,7 @@ class DocentesApp:
                             {
                                 'nombre': '8B',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -904,6 +911,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -914,7 +922,7 @@ class DocentesApp:
                             {
                                 'nombre': '8C',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -926,6 +934,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -1426,41 +1435,44 @@ class DocentesApp:
                             '8A': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=1),
+                                'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=1),
+                                'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=1),
+                                'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '9A': {
                                 'Tecnologia': tk.IntVar(value=0),
@@ -2091,7 +2103,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -2103,6 +2115,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -2362,7 +2375,8 @@ class DocentesApp:
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '9A': {
                                 'Tecnologia': tk.IntVar(value=0),
@@ -2413,7 +2427,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -2425,6 +2439,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -2435,7 +2450,7 @@ class DocentesApp:
                             {
                                 'nombre': '8B',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -2447,6 +2462,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -2457,7 +2473,7 @@ class DocentesApp:
                             {
                                 'nombre': '8C',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -2469,6 +2485,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -2612,39 +2629,42 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=1),
-                                'Historia': tk.IntVar(value=0),
+                                'Geografia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=1),
-                                'Historia': tk.IntVar(value=0),
+                                'Geografia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=1),
-                                'Historia': tk.IntVar(value=0),
+                                'Geografia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
@@ -3259,16 +3279,17 @@ class DocentesApp:
                             },
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=1),
+                                'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '9C': {
                                 'Tecnologia': tk.IntVar(value=0),
@@ -3763,12 +3784,13 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=1),
+                                'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
@@ -4446,12 +4468,13 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
@@ -4459,12 +4482,13 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
@@ -4472,16 +4496,17 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
-                        {'nombre': 'Jacqueline Fontela',
+                        {'nombre': 'Jaqueline Fontela',
                         'grupos': [
                             {
                                 'nombre': '7A',
@@ -4977,7 +5002,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -4989,6 +5014,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -4999,7 +5025,7 @@ class DocentesApp:
                             {
                                 'nombre': '8B',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -5011,6 +5037,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -5018,6 +5045,7 @@ class DocentesApp:
                                     '11:05 - 11:50', '11:55 - 12:35', '12:35 - 13:15'
                                 ]
                             },
+
 
                         ],
                         'disponibilidad': {
@@ -5110,29 +5138,31 @@ class DocentesApp:
                         'asignaturas': {
                             '8A': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=1),
+                                'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=1),
+                                'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
@@ -5474,7 +5504,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -5486,6 +5516,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -5496,7 +5527,7 @@ class DocentesApp:
                             {
                                 'nombre': '8B',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -5508,6 +5539,30 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
+                                    'Matematica': 5
+                                },
+                                'horarios': [
+                                    '7:15 - 7:55', '7:55 - 8:35', '8:45 - 9:35', '9:35 - 10:15', '10:15 - 10:55',
+                                    '11:05 - 11:50', '11:55 - 12:35', '12:35 - 13:15'
+                                ]
+                            },
+                            {
+                                'nombre': '8C',
+                                'turno': 'Matutino',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
+                                'carga_horaria': {
+                                    'Tecnologia': 5,
+                                    'Biologia': 3,
+                                    'Ed Fisica': 2,
+                                    'Arte': 3,
+                                    'Sexualidad': 2,
+                                    'Geografia': 4,
+                                    'Historia': 3,
+                                    'Lengua': 4,
+                                    'Cs Computacion': 2,
+                                    'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -5609,12 +5664,13 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=1),
+                                'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
@@ -5622,12 +5678,13 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=1),
+                                'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
@@ -5636,7 +5693,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -5648,6 +5705,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -5655,6 +5713,7 @@ class DocentesApp:
                                     '11:05 - 11:50', '11:55 - 12:35', '12:35 - 13:15'
                                 ]
                             },
+
                         ],
                         'disponibilidad': {
                             '8A': {
@@ -5707,12 +5766,13 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
-                                'Ingles': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=1),
+                                'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
@@ -5966,7 +6026,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -5978,6 +6038,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -5988,7 +6049,7 @@ class DocentesApp:
                             {
                                 'nombre': '8B',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -6000,6 +6061,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -6007,6 +6069,7 @@ class DocentesApp:
                                     '11:05 - 11:50', '11:55 - 12:35', '12:35 - 13:15'
                                 ]
                             },
+
                         ],
                         'disponibilidad': {
                             '8A': {
@@ -6101,12 +6164,13 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
-                                'Lengua': tk.IntVar(value=1),
+                                'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
@@ -6114,12 +6178,13 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
-                                'Lengua': tk.IntVar(value=1),
+                                'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
@@ -6418,7 +6483,7 @@ class DocentesApp:
                             {
                                 'nombre': '8A',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -6430,6 +6495,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -6440,7 +6506,7 @@ class DocentesApp:
                             {
                                 'nombre': '8B',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -6452,6 +6518,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -6462,7 +6529,7 @@ class DocentesApp:
                             {
                                 'nombre': '8C',
                                 'turno': 'Matutino',
-                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Matematica',
+                                'asignaturas': 'Tecnologia, Biologia, Ed Fisica, Arte, Sexualidad, Geografia, Historia, Lengua, Cs Computacion, Ingles, Fisico-Quimica, Matematica',
                                 'carga_horaria': {
                                     'Tecnologia': 5,
                                     'Biologia': 3,
@@ -6474,6 +6541,7 @@ class DocentesApp:
                                     'Lengua': 4,
                                     'Cs Computacion': 2,
                                     'Ingles': 4,
+                                    'Fisico-Quimica': 2,
                                     'Matematica': 5
                                 },
                                 'horarios': [
@@ -6722,43 +6790,46 @@ class DocentesApp:
                                 'Tecnologia': tk.IntVar(value=0)
                             },
                             '8A': {
-                                'Arte': tk.IntVar(value=1),
+                                'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
-                                'Arte': tk.IntVar(value=1),
+                                'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8C': {
-                                'Arte': tk.IntVar(value=1),
+                                'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
-                                'Tecnologia': tk.IntVar(value=0)
+                                'Tecnologia': tk.IntVar(value=0),
+                                'Fisico-Quimica': tk.IntVar(value=0)
                             },
                         }
                         },
