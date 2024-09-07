@@ -9,6 +9,7 @@ from ttkbootstrap.constants import *
 import pandas as pd
 import openpyxl
 from openpyxl.styles import PatternFill
+from datetime import datetime, timedelta
 
 class HorariosApp:
     def __init__(self, root):
@@ -37,7 +38,7 @@ class GruposApp:
         self.root = tab
         self.switch_to_docentes_callback = switch_to_docentes_callback
         # Cargar la imagen de fondo
-        self.background_image = Image.open("fondo.png")
+        self.background_image = Image.open("fondo11.png")
         self.background_photo = ImageTk.PhotoImage(self.background_image)
         self.canvas = tk.Canvas(tab, width=self.background_image.width, height=self.background_image.height)
         self.canvas.pack(fill="both", expand=True)
@@ -329,7 +330,7 @@ class DocentesApp:
         self.grupos = grupos
         ### ACA ESTA EL CAMBIO: Agregué los docentes que llegué a hardcodear, funciona. 
         self.docentes = [
-                        {'nombre': 'Alejandra Galli',
+                        {'nombre': 'Alejandra Galli', #
                         'grupos': [
                             {
                                 'nombre': '7A',
@@ -805,7 +806,7 @@ class DocentesApp:
                             },
                         }
                         },
-                        {'nombre': 'Lucia Martinez',
+                        {'nombre': 'Lucia Martinez', #
                         'grupos': [
                             {
                                 'nombre': '7A',
@@ -1435,10 +1436,10 @@ class DocentesApp:
                             '8A': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=0),
+                                'Cs Computacion': tk.IntVar(value=1),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -1449,10 +1450,10 @@ class DocentesApp:
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=0),
+                                'Cs Computacion': tk.IntVar(value=1),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -1463,10 +1464,10 @@ class DocentesApp:
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=0),
+                                'Cs Computacion': tk.IntVar(value=1),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2422,7 +2423,7 @@ class DocentesApp:
                             }
                         }
                         },
-                        {'nombre': 'Rogelio Giró ',
+                        {'nombre': 'Rogelio Giró ', #
                         'grupos': [
                             {
                                 'nombre': '8A',
@@ -2629,8 +2630,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Geografia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2643,8 +2644,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Geografia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2657,8 +2658,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Geografia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2909,7 +2910,7 @@ class DocentesApp:
                             },
                         }
                         },
-                        {'nombre': 'Stephanie Grego',
+                        {'nombre': 'Stephanie Grego',#
                         'grupos': [
                             {
                                 'nombre': '7A',
@@ -3280,11 +3281,11 @@ class DocentesApp:
                             },
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=0),
+                                'Biologia': tk.IntVar(value=1),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -3786,10 +3787,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=0),
+                                'Matematica': tk.IntVar(value=1),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -4473,7 +4474,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -4487,7 +4488,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -4501,7 +4502,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5143,11 +5144,11 @@ class DocentesApp:
                         'asignaturas': {
                             '8A': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=0),
+                                'Biologia': tk.IntVar(value=1),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5157,11 +5158,11 @@ class DocentesApp:
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=0),
+                                'Biologia': tk.IntVar(value=1),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5504,7 +5505,7 @@ class DocentesApp:
                             },
                         }
                         },
-                        {'nombre': 'Nestor Lucas',
+                        {'nombre': 'Nestor Lucas', #
                         'grupos': [
                             {
                                 'nombre': '8A',
@@ -5646,10 +5647,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=0),
+                                'Matematica': tk.IntVar(value=1),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -5660,10 +5661,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=0),
+                                'Matematica': tk.IntVar(value=1),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -5748,8 +5749,8 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
-                                'Ingles': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=0),
+                                'Ingles': tk.IntVar(value=1),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
@@ -6146,9 +6147,9 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
-                                'Lengua': tk.IntVar(value=0),
+                                'Lengua': tk.IntVar(value=1),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
@@ -6160,9 +6161,9 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
-                                'Lengua': tk.IntVar(value=0),
+                                'Lengua': tk.IntVar(value=1),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
@@ -6416,7 +6417,7 @@ class DocentesApp:
                             }
                         }
                         },
-                        {'nombre': 'Ana Ferreira Campanella',
+                        {'nombre': 'Ana Ferreira Campanella', #
                         'grupos': [
                             {
                                 'nombre': '7B',
@@ -6772,12 +6773,12 @@ class DocentesApp:
                                 'Tecnologia': tk.IntVar(value=0)
                             },
                             '8A': {
-                                'Arte': tk.IntVar(value=0),
+                                'Arte': tk.IntVar(value=1),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -6786,12 +6787,12 @@ class DocentesApp:
                                 'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
-                                'Arte': tk.IntVar(value=0),
+                                'Arte': tk.IntVar(value=1),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -6800,12 +6801,12 @@ class DocentesApp:
                                 'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8C': {
-                                'Arte': tk.IntVar(value=0),
+                                'Arte': tk.IntVar(value=1),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=0),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -7223,13 +7224,12 @@ class DocentesApp:
                         },
                     ]
 
-
         self.disponibilidad_actual = {}
         
         self.asignaturas_seleccionadas = {}
         self.grupos_seleccionados = []  # Lista para almacenar los grupos seleccionados
         # Configuración del fondo
-        self.background_image = Image.open("fondo.png")
+        self.background_image = Image.open("fondo11.png")
         self.background_photo = ImageTk.PhotoImage(self.background_image)
         self.canvas = tk.Canvas(tab, width=self.background_image.width, height=self.background_image.height)
         self.canvas.pack(fill="both", expand=True)
@@ -7238,6 +7238,12 @@ class DocentesApp:
         # Crear el formulario de docente
         self.create_docente_form()
 
+    def convertir_a_minutos(self, intervalo):
+        inicio, fin = intervalo.split(' - ')
+        formato = '%H:%M'
+        inicio_dt = datetime.strptime(inicio, formato)
+        fin_dt = datetime.strptime(fin, formato)
+        return (inicio_dt.hour * 60 + inicio_dt.minute, fin_dt.hour * 60 + fin_dt.minute)
     def update_grupos(self, grupos):
         self.grupos = grupos
 
@@ -7562,22 +7568,25 @@ class DocentesApp:
     def asignar_horas_asignatura(self, horarios, grupo_nombre, docente, asignatura, combinaciones_horas, dias, superposiciones):
         """Asigna las horas de una asignatura respetando las combinaciones y prioridades."""
         horas_asignadas = 0
+        dias_asignados = []
         for combinacion in combinaciones_horas:
             for dia in dias:
                 horas_disponibles = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia)
-                if len(horas_disponibles) >= combinacion[0] and horas_asignadas < sum(combinacion):
+                if len(horas_disponibles) >= combinacion[0] and horas_asignadas < sum(combinacion) and dia not in dias_asignados:
                     horas_asignadas_dia = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones)
                     horas_asignadas += horas_asignadas_dia
+                    dias_asignados.append(dia)
                     
                     # Asignar el resto de la combinación en otros días
                     if horas_asignadas_dia > 0 and len(combinacion) > 1:
                         combinacion_restante = combinacion[1:]
                         for dia_restante in dias:
-                            if dia_restante != dia:  # No asignar en el mismo día
+                            if dia_restante != dia and dia_restante not in dias_asignados:  # No asignar en el mismo día
                                 horas_disponibles_restantes = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia_restante)
                                 if len(horas_disponibles_restantes) >= combinacion_restante[0]:
                                     horas_asignadas_dia += self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones)
                                     horas_asignadas += horas_asignadas_dia
+                                    dias_asignados.append(dia_restante)
                                     break  # Salir del loop si se asignaron todas las horas
                     if horas_asignadas >= sum(combinacion):
                         break  # Salir si se asignaron todas las horas
@@ -7610,19 +7619,31 @@ class DocentesApp:
     def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones):
         """Asigna las horas de una asignatura en un día específico, asegurando la continuidad."""
         horas_asignadas = 0
+        horarios_contiguos = [ # Hardcodeo los horarios contiguos porque sino no comprueba bien
+                ('7:15 - 7:55', '7:55 - 8:35'),
+                ('7:55 - 8:35', '8:45 - 9:35'),
+                ('8:45 - 9:35', '9:35 - 10:15'),
+                ('9:35 - 10:15', '10:15 - 10:55'),
+                ('10:15 - 10:55', '11:05 - 11:50'),
+                ('11:05 - 11:50', '11:55 - 12:35'),
+                ('11:55 - 12:35', '12:35 - 13:15')
+            ]
 
         # Buscar intervalos de horas disponibles contiguas que sean suficientes para la combinación
-        for i in range(len(horas_disponibles) - len(combinacion) + 1):
+        for i in range(len(horas_disponibles) - sum(combinacion) + 1):
             # Verificar que las horas sean contiguas y suficientes para la combinación
             contiguas = True
-            for j in range(len(combinacion) - 1):
-                if horas_disponibles[i + j + 1] != horas_disponibles[i + j] + 1:
+
+
+            for j in range(sum(combinacion) - 1): #Nueva forma de comrpobar si son ccontiguos. Creo que lo hace perfecto
+                intervalo_actual = horas_disponibles[i + j]
+                intervalo_siguiente = horas_disponibles[i + j + 1]
+                if (intervalo_actual, intervalo_siguiente) not in horarios_contiguos:
                     contiguas = False
                     break
-
             if contiguas:
                 # Asignar horas continuas
-                for j in range(len(combinacion)):
+                for j in range(sum(combinacion)):
                     intervalo = horas_disponibles[i + j]
                     for fila in horarios:
                         if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo:
@@ -7632,9 +7653,14 @@ class DocentesApp:
                 break  # Salir después de asignar la combinación continua
 
         # Verificar si se asignaron todas las horas continuas; si no, intentar asignarlas individualmente
-        if horas_asignadas < len(combinacion):
+        ### Aca hay un error, si no son contiguas, arranca a mandar las horas donde va encontrando, lo que hace que si hay dos lugares contiguos
+        # y uno no contiguo (todo en el mismo dia), los va metiendo ahi, lo que no deberia pasar. Ahi es cuando se genera el error. Por ende habria que ver de
+        # hacer que si no son contiguas, no las asigne y que siga buscando y si no encuentra ningun bloque contiguo, ahi recien que empiece a asignarlas. 
+        # Tambien cuando arranque a asignarlas (despues de haber checkeado que no hay bloques contiguos) deberia de checkear de no meter dos en un mismo dia.
+        # Es decir, que si mete una hora en un dia, y, como ya no deberia haber horas contiguas, que no meta otra en ese dia porque no van a estar contiguas
+        if horas_asignadas < sum(combinacion):
             for i, intervalo in enumerate(horas_disponibles):
-                if horas_asignadas >= len(combinacion):
+                if horas_asignadas >= sum(combinacion):
                     break
                 for fila in horarios:
                     if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo and fila[dia] == "":
@@ -7651,7 +7677,7 @@ class DocentesApp:
         if total_horas == 2:
             return [(2,)]  # 2 horas juntas en el mismo día
         elif total_horas == 3:
-            return [(3,), (1, 2), (2, 1)]  # 3 horas juntas o 2 juntas + 1 separada
+            return [(3,),(2, 1) ,(1, 2) ]  # 3 horas juntas o 2 juntas + 1 separada
         elif total_horas == 4:
             return [(2, 2)]  # 3 + 1 o 2 + 2 (No 4 juntas ni 4 separadas)
         elif total_horas == 5:
