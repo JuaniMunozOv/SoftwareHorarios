@@ -37,7 +37,7 @@ class GruposApp:
         self.root = tab
         self.switch_to_docentes_callback = switch_to_docentes_callback
         # Cargar la imagen de fondo
-        self.background_image = Image.open("fondo11.png")
+        self.background_image = Image.open("fondo.png")
         self.background_photo = ImageTk.PhotoImage(self.background_image)
         self.canvas = tk.Canvas(tab, width=self.background_image.width, height=self.background_image.height)
         self.canvas.pack(fill="both", expand=True)
@@ -1435,10 +1435,10 @@ class DocentesApp:
                             '8A': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=1),
+                                'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -1449,10 +1449,10 @@ class DocentesApp:
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=1),
+                                'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -1463,10 +1463,10 @@ class DocentesApp:
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
-                                'Cs Computacion': tk.IntVar(value=1),
+                                'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2629,8 +2629,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=1),
-                                'Historia': tk.IntVar(value=0),
+                                'Geografia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2643,8 +2643,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=1),
-                                'Historia': tk.IntVar(value=0),
+                                'Geografia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -2657,8 +2657,8 @@ class DocentesApp:
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
-                                'Geografia': tk.IntVar(value=1),
-                                'Historia': tk.IntVar(value=0),
+                                'Geografia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -3280,11 +3280,11 @@ class DocentesApp:
                             },
                             '8C': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=1),
+                                'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -3786,10 +3786,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=1),
+                                'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -4473,7 +4473,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -4487,7 +4487,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -4501,7 +4501,7 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5143,11 +5143,11 @@ class DocentesApp:
                         'asignaturas': {
                             '8A': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=1),
+                                'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5157,11 +5157,11 @@ class DocentesApp:
                             },
                             '8B': {
                                 'Arte': tk.IntVar(value=0),
-                                'Biologia': tk.IntVar(value=1),
+                                'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -5646,10 +5646,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=1),
+                                'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -5660,10 +5660,10 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
-                                'Matematica': tk.IntVar(value=1),
+                                'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
                                 'Fisico-Quimica': tk.IntVar(value=0)
@@ -5748,8 +5748,8 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
-                                'Ingles': tk.IntVar(value=1),
+                                'Historia': tk.IntVar(value=1),
+                                'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
@@ -6146,9 +6146,9 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
-                                'Lengua': tk.IntVar(value=1),
+                                'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
@@ -6160,9 +6160,9 @@ class DocentesApp:
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
-                                'Lengua': tk.IntVar(value=1),
+                                'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
                                 'Sexualidad': tk.IntVar(value=0),
                                 'Tecnologia': tk.IntVar(value=0),
@@ -6772,12 +6772,12 @@ class DocentesApp:
                                 'Tecnologia': tk.IntVar(value=0)
                             },
                             '8A': {
-                                'Arte': tk.IntVar(value=1),
+                                'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -6786,12 +6786,12 @@ class DocentesApp:
                                 'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8B': {
-                                'Arte': tk.IntVar(value=1),
+                                'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -6800,12 +6800,12 @@ class DocentesApp:
                                 'Fisico-Quimica': tk.IntVar(value=0)
                             },
                             '8C': {
-                                'Arte': tk.IntVar(value=1),
+                                'Arte': tk.IntVar(value=0),
                                 'Biologia': tk.IntVar(value=0),
                                 'Cs Computacion': tk.IntVar(value=0),
                                 'Ed Fisica': tk.IntVar(value=0),
                                 'Geografia': tk.IntVar(value=0),
-                                'Historia': tk.IntVar(value=0),
+                                'Historia': tk.IntVar(value=1),
                                 'Ingles': tk.IntVar(value=0),
                                 'Lengua': tk.IntVar(value=0),
                                 'Matematica': tk.IntVar(value=0),
@@ -7229,7 +7229,7 @@ class DocentesApp:
         self.asignaturas_seleccionadas = {}
         self.grupos_seleccionados = []  # Lista para almacenar los grupos seleccionados
         # Configuración del fondo
-        self.background_image = Image.open("fondodocente.png")
+        self.background_image = Image.open("fondo.png")
         self.background_photo = ImageTk.PhotoImage(self.background_image)
         self.canvas = tk.Canvas(tab, width=self.background_image.width, height=self.background_image.height)
         self.canvas.pack(fill="both", expand=True)
@@ -7608,23 +7608,60 @@ class DocentesApp:
         return False
 
     def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones):
-        """Asigna las horas de una asignatura en un día específico."""
+        """Asigna las horas de una asignatura en un día específico, asegurando la continuidad y manejando superposiciones si es necesario."""
         horas_asignadas = 0
-        for horas in combinacion:
-            if horas_asignadas + horas > len(horas_disponibles):
-                break
-            for i in range(horas):
-                intervalo = horas_disponibles[horas_asignadas + i]
-                for fila in horarios:
-                    if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo:
-                        if fila[dia] == "":
+        dias_asignados = []
+
+        # 1. Buscar intervalos de horas disponibles contiguas que sean suficientes para la combinación
+        for i in range(len(horas_disponibles) - len(combinacion) + 1):
+            # Verificar que las horas sean contiguas y suficientes para la combinación
+            contiguas = True
+            for j in range(len(combinacion) - 1):
+                if horas_disponibles[i + j + 1] != horas_disponibles[i + j] + 1:
+                    contiguas = False
+                    break
+
+            if contiguas:
+                # Asignar horas continuas en el mismo día
+                for j in range(len(combinacion)):
+                    intervalo = horas_disponibles[i + j]
+                    for fila in horarios:
+                        if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo:
                             fila[dia] = f"{asignatura} ({docente['nombre']})"
-                        else:
-                            fila[dia] += f" | {asignatura} ({docente['nombre']})"
-                            superposiciones.append(f"Superposición en {fila['Grupo']} {fila['Horario']} ({dia})")
+                            horas_asignadas += 1
+                            dias_asignados.append(dia)
+                            break
+                break  # Salir después de asignar la combinación continua
+
+        # 2. Si no se pudieron asignar todas las horas de forma continua, cambiar de día
+        if horas_asignadas < len(combinacion):
+            for dia_restante in ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]:
+                if dia_restante != dia and dia_restante not in dias_asignados:
+                    horas_disponibles_restantes = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia_restante)
+                    
+                    # Intentar asignar las horas restantes en el nuevo día
+                    if len(horas_disponibles_restantes) >= len(combinacion) - horas_asignadas:
+                        horas_asignadas += self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion[horas_asignadas:], dia_restante, horas_disponibles_restantes, superposiciones)
+                        dias_asignados.append(dia_restante)
                         break
-            horas_asignadas += horas
+
+        # 3. Si no se encuentran suficientes horas contiguas ni en el día actual ni en otro día, se permite una superposición
+        if horas_asignadas < len(combinacion):
+            for i, intervalo in enumerate(horas_disponibles):
+                if horas_asignadas >= len(combinacion):
+                    break
+                for fila in horarios:
+                    if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo and fila[dia] == "":
+                        # Aquí manejamos la superposición
+                        fila[dia] = f"{asignatura} ({docente['nombre']}) - Superposición"
+                        superposiciones.append(f"Superposición en {dia} entre {asignatura} y {fila[dia]}")
+                        horas_asignadas += 1
+                        break
+
         return horas_asignadas
+
+
+
 
     def generar_combinaciones_horas(self, total_horas):
         """Genera combinaciones posibles de horas para respetar la prioridad de distribución."""
@@ -7640,23 +7677,74 @@ class DocentesApp:
 
 
     def exportar_horarios_excel(self, horarios, superposiciones):
-        """Exporta los horarios generados a un archivo de Excel."""
+        """Exporta los horarios generados a un archivo de Excel con tres hojas."""
         df = pd.DataFrame(horarios)
         filepath = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx"), ("All files", "*.*")])
         if filepath:
             with pd.ExcelWriter(filepath, engine='xlsxwriter') as writer:
+                # Hoja 1: Planilla de Horarios
                 df.to_excel(writer, sheet_name='Horarios', index=False)
 
-                # Escribir superposiciones si existen
-                if superposiciones:
-                    ws = writer.book.add_worksheet('Superposiciones')
-                    for i, sup in enumerate(superposiciones, start=1):
-                        ws.write(f'A{i}', sup)
+                # Hoja 2: Horarios de cada docente en cada grupo
+                self.exportar_horarios_docentes_por_grupo(writer, horarios)
+
+                # Hoja 3: Superposiciones
+                self.exportar_superposiciones(writer, superposiciones, horarios)
 
             messagebox.showinfo("Planilla Guardada", "La planilla ha sido guardada en el archivo de Excel.")
+        
         if superposiciones:
             superposiciones_str = '\n'.join(superposiciones)
             messagebox.showwarning("Superposiciones Detectadas", f"Se encontraron superposiciones en los siguientes horarios:\n{superposiciones_str}")
+
+    def exportar_horarios_docentes_por_grupo(self, writer, horarios):
+        """Exporta los horarios de cada docente por grupo a una hoja de Excel."""
+        dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+        rows = []
+
+        # Extraer información del horario final
+        for fila in horarios:
+            grupo_nombre = fila['Grupo']
+            intervalo = fila['Horario']
+            if grupo_nombre:  # Ignorar filas vacías que separan grupos
+                for dia in dias:
+                    contenido = fila[dia]
+                    if contenido:
+                        # Extraer el docente y la asignatura
+                        asignatura_docente = contenido.split(" | ")  # Puede haber varios asignados en el mismo horario
+                        for ad in asignatura_docente:
+                            asignatura, docente = ad.split(' (')
+                            docente = docente.strip(')')
+                            rows.append([docente, grupo_nombre, asignatura, dia, intervalo])
+
+        # Convertir a DataFrame
+        df_docentes = pd.DataFrame(rows, columns=["Docente", "Grupo", "Asignatura", "Día", "Horario"])
+        df_docentes.to_excel(writer, sheet_name='Horarios Docentes', index=False)
+
+    def exportar_superposiciones(self, writer, superposiciones, horarios):
+        """Exporta las superposiciones detectadas a una hoja de Excel si existen."""
+        filas_superposiciones = []
+
+        # Filtrar superposiciones para incluir solo las que están en la planilla final
+        dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+        for sup in superposiciones:
+            # Separar la superposición en partes
+            partes = sup.split(" en ")
+            if len(partes) == 2:
+                grupo_info, horario_info = partes
+                grupo, intervalo = horario_info.split(" (")
+                dia = grupo.split()[1].strip(")")
+                
+                # Verificar si esta superposición aparece en el horario final
+                for fila in horarios:
+                    if fila['Grupo'] == grupo and fila['Horario'] == intervalo:
+                        if dia in dias and fila[dia].endswith(f"({partes[0].split()[1]})"):
+                            filas_superposiciones.append([grupo_info, horario_info])
+
+        # Exportar si hay superposiciones filtradas
+        if filas_superposiciones:
+            df_superposiciones = pd.DataFrame(filas_superposiciones, columns=["Superposición", "Detalles"])
+            df_superposiciones.to_excel(writer, sheet_name='Superposiciones', index=False)
 
     def ver_datos(self):
         ventana_ver_datos = tk.Toplevel(self.root)
