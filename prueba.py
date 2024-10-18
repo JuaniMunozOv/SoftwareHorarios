@@ -7168,7 +7168,7 @@ class DocentesApp:
             for dia in dias:
                 horas_disponibles = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia)
                 if len(horas_disponibles) >= combinacion[0] and horas_asignadas < sum(combinacion) and dia not in dias_asignados:
-                    horas_asignadas_dia,dia_actual = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones,dias, combinaciones_horas)
+                    horas_asignadas_dia,dia_actual = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones,dias, combinaciones_horas, dias_asignados, combinacion_restante=[])
                     horas_asignadas += horas_asignadas_dia
                     if dia_actual is not None:
                         dia = dia_actual
@@ -7181,7 +7181,7 @@ class DocentesApp:
                             if dia_restante != dia and dia_restante not in dias_asignados:  # No asignar en el mismo día
                                 horas_disponibles_restantes = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia_restante)
                                 if len(horas_disponibles_restantes) >= combinacion_restante[0]:
-                                    horitas,dia_actual = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones,dias, combinaciones_horas)
+                                    horitas,dia_actual = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones,dias, combinaciones_horas, dias_asignados, combinacion_restante)
                                     horas_asignadas_dia += horitas
                                     horas_asignadas += horas_asignadas_dia
                                     dias_asignados.append(dia_restante)
@@ -7196,7 +7196,7 @@ class DocentesApp:
         for dia in dias:
             horas_disponibles = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia)
             if len(horas_disponibles) >= len(combinacion):
-                if self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones):
+                if self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones,dias_asignados=[], combinacion_restante=[]):
                     return True
         return False
 
@@ -7223,7 +7223,7 @@ class DocentesApp:
 
 #Verificar superopisiciones , y tener en cuenta que si se genera superoposion no sea en el mismo dia. 
 
-    def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones, dias, combinaciones_horas):
+    def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones, dias, combinaciones_horas, dias_asignados, combinacion_restante):
         """Asigna las horas de una asignatura en un día específico, asegurando la continuidad y evitando intercalaciones."""
         horas_asignadas = 0
         horas_totales = sum(combinacion)
@@ -7264,7 +7264,7 @@ class DocentesApp:
         horas_restantes = horas_totales - horas_asignadas
         if horas_restantes > 0:
             for dia_restante in dias:  # Utilizar el parámetro `dias`
-                if dia_restante != dia and dia_restante not in dias_utilizados:
+                if dia_restante != dia and dia_restante not in dias_utilizados and dia_restante not in dias_asignados:  # No asignar en el mismo día
                     horas_disponibles_restantes = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia_restante)
                     for i in range(len(horas_disponibles_restantes) - horas_restantes + 1):
                         contiguas = True
@@ -7294,7 +7294,7 @@ class DocentesApp:
 
 
         # Paso 3: Si aún quedan horas por asignar, gestionar la superposición y registrar celdas vacías
-        if combinacion == combinaciones_horas[-1]:
+        if combinacion == combinacion_restante:
             if horas_asignadas < horas_totales:
                 horas_faltantes = horas_totales - horas_asignadas
                 for dia_superpuesto in dias:
