@@ -7163,12 +7163,15 @@ class DocentesApp:
         """Asigna las horas de una asignatura respetando las combinaciones y prioridades."""
         horas_asignadas = 0
         dias_asignados = []
+        dia_actual = None
         for combinacion in combinaciones_horas:
             for dia in dias:
                 horas_disponibles = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia)
                 if len(horas_disponibles) >= combinacion[0] and horas_asignadas < sum(combinacion) and dia not in dias_asignados:
-                    horas_asignadas_dia = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones,dias, combinaciones_horas)
+                    horas_asignadas_dia,dia_actual = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones,dias, combinaciones_horas)
                     horas_asignadas += horas_asignadas_dia
+                    if dia_actual is not None:
+                        dia = dia_actual
                     dias_asignados.append(dia)
                     
                     # Asignar el resto de la combinación en otros días
@@ -7178,7 +7181,8 @@ class DocentesApp:
                             if dia_restante != dia and dia_restante not in dias_asignados:  # No asignar en el mismo día
                                 horas_disponibles_restantes = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia_restante)
                                 if len(horas_disponibles_restantes) >= combinacion_restante[0]:
-                                    horas_asignadas_dia += self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones,dias, combinaciones_horas)
+                                    horitas,dia_actual = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones,dias, combinaciones_horas)
+                                    horas_asignadas_dia += horitas
                                     horas_asignadas += horas_asignadas_dia
                                     dias_asignados.append(dia_restante)
                                     break  # Salir del loop si se asignaron todas las horas
@@ -7233,6 +7237,7 @@ class DocentesApp:
             ('11:55 - 12:35', '12:35 - 13:15')
         ]
         dias_utilizados = {dia: 0}  # Registro de horas asignadas por día
+        dia_actual = None
 
         # Paso 1: Intentar asignar horas contiguas en el día especificado
         for i in range(len(horas_disponibles) - horas_totales + 1):
@@ -7279,6 +7284,7 @@ class DocentesApp:
                                         horas_asignadas += 1
                                         dias_utilizados[dia_restante] = dias_utilizados.get(dia_restante, 0) + 1
                                         break
+                            dia_actual = dia_restante
                             break
                 if horas_asignadas >= horas_totales:
                     break  # Salir si se asignaron todas las horas
@@ -7324,7 +7330,7 @@ class DocentesApp:
                                 horas_asignadas += 1
                                 break
 
-        return horas_asignadas
+        return horas_asignadas,dia_actual
 
 
 
