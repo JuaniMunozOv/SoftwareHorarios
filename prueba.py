@@ -7167,7 +7167,7 @@ class DocentesApp:
             for dia in dias:
                 horas_disponibles = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia)
                 if len(horas_disponibles) >= combinacion[0] and horas_asignadas < sum(combinacion) and dia not in dias_asignados:
-                    horas_asignadas_dia = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones,dias)
+                    horas_asignadas_dia = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones,dias, combinaciones_horas)
                     horas_asignadas += horas_asignadas_dia
                     dias_asignados.append(dia)
                     
@@ -7178,7 +7178,7 @@ class DocentesApp:
                             if dia_restante != dia and dia_restante not in dias_asignados:  # No asignar en el mismo día
                                 horas_disponibles_restantes = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia_restante)
                                 if len(horas_disponibles_restantes) >= combinacion_restante[0]:
-                                    horas_asignadas_dia += self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones,dias)
+                                    horas_asignadas_dia += self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones,dias, combinaciones_horas)
                                     horas_asignadas += horas_asignadas_dia
                                     dias_asignados.append(dia_restante)
                                     break  # Salir del loop si se asignaron todas las horas
@@ -7202,6 +7202,13 @@ class DocentesApp:
                 fila[dia] == "" and 
                 docente['disponibilidad'][grupo_nombre].get(f"{dia} {fila['Horario']}", tk.IntVar()).get() == 1 and
                 not self.docente_ocupado_en_otro_grupo(horarios, docente, dia, fila['Horario'])]
+    
+    def obtener_dia_superponible(self, horarios, grupo_nombre, docente, dia):
+        """Obtiene el día disponible para un docente en un grupo y día específicos."""
+        for fila in horarios:
+            if fila['Grupo'] == grupo_nombre and fila[dia] == "" and docente['disponibilidad'][grupo_nombre].get(f"{dia} {fila['Horario']}", tk.IntVar()).get() == 1:
+                return True
+        return False
 
     def docente_ocupado_en_otro_grupo(self, horarios, docente, dia, horario):
         """Verifica si el docente ya está ocupado en otro grupo en el mismo horario."""
@@ -7212,7 +7219,7 @@ class DocentesApp:
 
 #Verificar superopisiciones , y tener en cuenta que si se genera superoposion no sea en el mismo dia. 
 
-    def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones, dias):
+    def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones, dias, combinaciones_horas):
         """Asigna las horas de una asignatura en un día específico, asegurando la continuidad y evitando intercalaciones."""
         horas_asignadas = 0
         horas_totales = sum(combinacion)
@@ -7275,40 +7282,47 @@ class DocentesApp:
                             break
                 if horas_asignadas >= horas_totales:
                     break  # Salir si se asignaron todas las horas
+                    
+        # Deberia salir de esta funcion para cambiar de combinacion (porque recorrio toda la semana y no pudo meter la combinacion actual)
+        # Verificar si estamos en la última combinación posible
+
 
         # Paso 3: Si aún quedan horas por asignar, gestionar la superposición y registrar celdas vacías
-        if horas_asignadas < horas_totales:
-            horas_faltantes = horas_totales - horas_asignadas
-            for dia_superpuesto in dias:
-                if horas_faltantes == 0:
-                    break
-                for intervalo in horas_disponibles:
-                    if horas_faltantes == 0:
-                        break
-                    for fila in horarios:
-                        if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo:
-                            if fila[dia_superpuesto] != "":
-                                # Superposición detectada
-                                fila[dia_superpuesto] += f" / {asignatura} ({docente['nombre']})"
-                                superposiciones.append((fila['Horario'], dia_superpuesto, fila[dia_superpuesto]))
-                            else:
-                                fila[dia_superpuesto] = f"{asignatura} ({docente['nombre']})"
-                            horas_asignadas += 1
-                            horas_faltantes -= 1
+        if combinacion == combinaciones_horas[-1]:
+            if horas_asignadas < horas_totales:
+                horas_faltantes = horas_totales - horas_asignadas
+                for dia_superpuesto in dias:
+                    dia_superponible = self.obtener_dia_superponible(horarios, grupo_nombre, docente, dia_superpuesto)
+                    if dia_superponible:
+                        if horas_faltantes == 0:
                             break
+                        for intervalo in horas_disponibles:
+                            if horas_faltantes == 0:
+                                break
+                            for fila in horarios:
+                                if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo:
+                                    if fila[dia_superpuesto] != "":
+                                        # Superposición detectada
+                                        fila[dia_superpuesto] += f" / {asignatura} ({docente['nombre']})"
+                                        superposiciones.append((fila['Horario'], dia_superpuesto, fila[dia_superpuesto]))
+                                    else:
+                                        fila[dia_superpuesto] = f"{asignatura} ({docente['nombre']})"
+                                    horas_asignadas += 1
+                                    horas_faltantes -= 1
+                                    break
 
-        # Paso 4: Registrar celdas vacías si no se pudieron asignar todas las horas
-        if horas_asignadas < horas_totales:
-            for dia_vacio in self.dias:
-                for intervalo in horas_disponibles:
-                    if horas_asignadas >= horas_totales:
-                        break
-                    for fila in horarios:
-                        if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo and fila[dia_vacio] == "":
-                            fila[dia_vacio] = "No asignada: Falta de disponibilidad"
-                            self.registrar_celda_vacia(fila['Horario'], dia_vacio, "Falta de disponibilidad")
-                            horas_asignadas += 1
+            # Paso 4: Registrar celdas vacías si no se pudieron asignar todas las horas
+            if horas_asignadas < horas_totales:
+                for dia_vacio in self.dias:
+                    for intervalo in horas_disponibles:
+                        if horas_asignadas >= horas_totales:
                             break
+                        for fila in horarios:
+                            if fila['Grupo'] == grupo_nombre and fila['Horario'] == intervalo and fila[dia_vacio] == "":
+                                fila[dia_vacio] = "No asignada: Falta de disponibilidad"
+                                self.registrar_celda_vacia(fila['Horario'], dia_vacio, "Falta de disponibilidad")
+                                horas_asignadas += 1
+                                break
 
         return horas_asignadas
 
@@ -7322,7 +7336,7 @@ class DocentesApp:
         elif total_horas == 3:
             return [(3,),(2, 1) ]  # 3 horas juntas o 2 juntas + 1 separada
         elif total_horas == 4:
-            return [(2, 2)]  # 3 + 1 o 2 + 2 (No 4 juntas ni 4 separadas)
+            return [(2, 2), (3, 1)]  # 3 + 1 o 2 + 2 (No 4 juntas ni 4 separadas)
         elif total_horas == 5:
             return [(3, 2)]  # 3 horas juntas en un día y 2 en otro
         return []

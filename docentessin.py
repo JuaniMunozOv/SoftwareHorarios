@@ -38,7 +38,7 @@ class GruposApp:
         self.root = tab
         self.switch_to_docentes_callback = switch_to_docentes_callback
         # Cargar la imagen de fondo
-        self.background_image = Image.open("fondo11.png")
+        self.background_image = Image.open("fondo.png")
         self.background_photo = ImageTk.PhotoImage(self.background_image)
         self.canvas = tk.Canvas(tab, width=self.background_image.width, height=self.background_image.height)
         self.canvas.pack(fill="both", expand=True)
@@ -7230,7 +7230,7 @@ class DocentesApp:
         self.asignaturas_seleccionadas = {}
         self.grupos_seleccionados = []  # Lista para almacenar los grupos seleccionados
         # Configuración del fondo
-        self.background_image = Image.open("fondo11.png")
+        self.background_image = Image.open("fondo.png")
         self.background_photo = ImageTk.PhotoImage(self.background_image)
         self.canvas = tk.Canvas(tab, width=self.background_image.width, height=self.background_image.height)
         self.canvas.pack(fill="both", expand=True)
@@ -7574,7 +7574,7 @@ class DocentesApp:
             for dia in dias:
                 horas_disponibles = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia)
                 if len(horas_disponibles) >= combinacion[0] and horas_asignadas < sum(combinacion) and dia not in dias_asignados:
-                    horas_asignadas_dia = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones)
+                    horas_asignadas_dia = self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, [combinacion[0]], dia, horas_disponibles, superposiciones, dias_asignados)
                     horas_asignadas += horas_asignadas_dia
                     dias_asignados.append(dia)
                     
@@ -7585,7 +7585,7 @@ class DocentesApp:
                             if dia_restante != dia and dia_restante not in dias_asignados:  # No asignar en el mismo día
                                 horas_disponibles_restantes = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia_restante)
                                 if len(horas_disponibles_restantes) >= combinacion_restante[0]:
-                                    horas_asignadas_dia += self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones)
+                                    horas_asignadas_dia += self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion_restante, dia_restante, horas_disponibles_restantes, superposiciones, dias_asignados)
                                     horas_asignadas += horas_asignadas_dia
                                     dias_asignados.append(dia_restante)
                                     break  # Salir del loop si se asignaron todas las horas
@@ -7599,7 +7599,7 @@ class DocentesApp:
         for dia in dias:
             horas_disponibles = self.obtener_horas_disponibles(horarios, grupo_nombre, docente, dia)
             if len(horas_disponibles) >= len(combinacion):
-                if self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones):
+                if self.asignar_horas_en_dia(horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones, dias_asignados):
                     return True
         return False
 
@@ -7617,7 +7617,7 @@ class DocentesApp:
                 return True
         return False
 
-    def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones):
+    def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones, dias_asignados):
         """Asigna las horas de una asignatura en un día específico, asegurando la continuidad."""
         horas_asignadas = 0
         horarios_contiguos = [ # Hardcodeo los horarios contiguos porque sino no comprueba bien
@@ -7641,7 +7641,10 @@ class DocentesApp:
                 intervalo_siguiente = horas_disponibles[i + j + 1]
                 if (intervalo_actual, intervalo_siguiente) not in horarios_contiguos:
                     contiguas = False
+                    #if contiguas == False and dia in dias_recorridos:
                     break
+                    #else:
+                    #    exit
             if contiguas:
                 # Asignar horas continuas
                 for j in range(sum(combinacion)):

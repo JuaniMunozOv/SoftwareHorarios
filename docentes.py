@@ -7543,7 +7543,7 @@ class DocentesApp:
 
         # Asignar horarios a cada grupo y asignatura
         for grupo in self.grupos:
-            grupo_nombre = grupo['nombre']
+            grupo_nombre = grupo['nombre'] 
             for docente in self.docentes:
                 if grupo in docente['grupos']:
                     for asignatura, asignatura_var in docente['asignaturas'][grupo_nombre].items():
@@ -7616,7 +7616,7 @@ class DocentesApp:
         for i in range(len(horas_disponibles) - len(combinacion) + 1):
             # Verificar que las horas sean contiguas y suficientes para la combinación
             contiguas = True
-            for j in range(len(combinacion) - 1):
+            for j in range(len(combinacion) - 1): # Aca no va a entrar nunca porque el largo de combinacion siempre es 1. Hay que usar 'sum' en lugar de 'len'
                 if horas_disponibles[i + j + 1] != horas_disponibles[i + j] + 1:
                     contiguas = False
                     break
@@ -7630,7 +7630,7 @@ class DocentesApp:
                             fila[dia] = f"{asignatura} ({docente['nombre']})"
                             horas_asignadas += 1
                             dias_asignados.append(dia)
-                            break
+                            
                 break  # Salir después de asignar la combinación continua
 
         # 2. Si no se pudieron asignar todas las horas de forma continua, cambiar de día
