@@ -7206,7 +7206,14 @@ class DocentesApp:
                 fila[dia] == "" and 
                 docente['disponibilidad'][grupo_nombre].get(f"{dia} {fila['Horario']}", tk.IntVar()).get() == 1 and
                 not self.docente_ocupado_en_otro_grupo(horarios, docente, dia, fila['Horario'])]
-    
+
+
+    def obtener_horas_disponibles_superponibles(self, horarios, grupo_nombre, docente, dia):
+        """Obtiene las horas disponibles para un docente en un grupo y día específicos."""
+        return [fila['Horario'] for fila in horarios if fila['Grupo'] == grupo_nombre and 
+                docente['disponibilidad'][grupo_nombre].get(f"{dia} {fila['Horario']}", tk.IntVar()).get() == 1 and
+                not self.docente_ocupado_en_otro_grupo(horarios, docente, dia, fila['Horario'])]
+        
     def obtener_dia_superponible(self, horarios, grupo_nombre, docente, dia):
         """Obtiene el día disponible para un docente en un grupo y día específicos."""
         for fila in horarios:
@@ -7299,6 +7306,7 @@ class DocentesApp:
                 horas_faltantes = horas_totales - horas_asignadas
                 for dia_superpuesto in dias:
                     dia_superponible = self.obtener_dia_superponible(horarios, grupo_nombre, docente, dia_superpuesto)
+                    horas_disponibles = self.obtener_horas_disponibles_superponibles(horarios, grupo_nombre, docente, dia_superpuesto)
                     if dia_superponible:
                         if horas_faltantes == 0:
                             break
