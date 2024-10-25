@@ -7232,17 +7232,15 @@ class DocentesApp:
 
     def asignar_horas_en_dia(self, horarios, grupo_nombre, docente, asignatura, combinacion, dia, horas_disponibles, superposiciones, dias, combinaciones_horas, dias_asignados, combinacion_restante):
         """Asigna las horas de una asignatura en un día específico, asegurando la continuidad y evitando intercalaciones."""
+        
+        # Obtener los horarios del grupo actual
+        grupo_horarios = next(grupo['horarios'] for grupo in self.grupos if grupo['nombre'] == grupo_nombre)
+        
+        # Generar pares de horarios contiguos dinámicamente
+        horarios_contiguos = [(grupo_horarios[i], grupo_horarios[i + 1]) for i in range(len(grupo_horarios) - 1)]
+        
         horas_asignadas = 0
         horas_totales = sum(combinacion)
-        horarios_contiguos = [
-            ('7:15 - 7:55', '7:55 - 8:35'),
-            ('7:55 - 8:35', '8:45 - 9:35'),
-            ('8:45 - 9:35', '9:35 - 10:15'),
-            ('9:35 - 10:15', '10:15 - 10:55'),
-            ('10:15 - 10:55', '11:05 - 11:50'),
-            ('11:05 - 11:50', '11:55 - 12:35'),
-            ('11:55 - 12:35', '12:35 - 13:15')
-        ]
         dias_utilizados = {dia: 0}  # Registro de horas asignadas por día
         dia_actual = None
 
@@ -7340,9 +7338,6 @@ class DocentesApp:
 
         return horas_asignadas,dia_actual
 
-
-
-
     def generar_combinaciones_horas(self, total_horas):
         """Genera combinaciones posibles de horas para respetar la prioridad de distribución."""
         if total_horas == 2:
@@ -7376,11 +7371,14 @@ class DocentesApp:
         if superposiciones:
             superposiciones_str = '\n'.join(superposiciones)
             messagebox.showwarning("Superposiciones Detectadas", f"Se encontraron superposiciones en los siguientes horarios:\n{superposiciones_str}")
-
+    
     def exportar_horarios_docentes_por_grupo(self, writer, horarios):
-        """Exporta los horarios de cada docente por grupo a una hoja de Excel."""
+        """Exporta los horarios de cada docente por grupo a una hoja de Excel, sin repetir nombres de docentes."""
         dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
         rows = []
+        
+        # Estructura para agrupar la información por docente
+        docentes_info = {}
 
         # Extraer información del horario final
         for fila in horarios:
@@ -7390,41 +7388,76 @@ class DocentesApp:
                 for dia in dias:
                     contenido = fila[dia]
                     if contenido:
-                        # Extraer el docente y la asignatura
-                        asignatura_docente = contenido.split(" | ")  # Puede haber varios asignados en el mismo horario
-                        for ad in asignatura_docente:
+                        # Separar asignaturas y docentes (pueden haber varios si hay superposición)
+                        asignaturas_docentes = contenido.split(" / ")  # Separar superposiciones por barra
+                        for ad in asignaturas_docentes:
                             asignatura, docente = ad.split('(')
                             docente = docente.strip(')')
-                            rows.append([docente, grupo_nombre, asignatura, dia, intervalo])
+                            asignatura = asignatura.strip()
+                            
+                            # Añadir la información en la estructura agrupada por docente
+                            if docente not in docentes_info:
+                                docentes_info[docente] = {}  # Inicializar si el docente no está aún
+                            
+                            # Añadir grupo si no está ya en el diccionario de ese docente
+                            if grupo_nombre not in docentes_info[docente]:
+                                docentes_info[docente][grupo_nombre] = []
+                            
+                            # Agregar la información del día y horario
+                            docentes_info[docente][grupo_nombre].append(f"{dia} {intervalo} ({asignatura})")
 
-        # Convertir a DataFrame
-        df_docentes = pd.DataFrame(rows, columns=["Docente", "Grupo", "Asignatura", "Día", "Horario"])
+        # Convertir la estructura agrupada en filas para exportar
+        for docente, grupos in docentes_info.items():
+            # Obtener los grupos y los detalles de asignaturas, días y horarios
+            grupos_info = []
+            horarios_info = []
+
+            for grupo, clases in grupos.items():
+                grupos_info.append(grupo)
+                # Separar cada horario en una nueva línea
+                horarios_info.append("\n".join(clases))
+
+            # Combinar los grupos y sus horarios correspondientes
+            rows.append([docente, "\n".join(grupos_info), "\n".join(horarios_info)])
+
+        # Convertir a DataFrame y exportar
+        df_docentes = pd.DataFrame(rows, columns=["Docente", "Grupos", "Día y Horarios"])
+        
+        # Exportar a Excel, ajustando el formato
         df_docentes.to_excel(writer, sheet_name='Horarios Docentes', index=False)
+
+        # Obtener el workbook y worksheet para ajustar el formato de Excel
+        workbook  = writer.book
+        worksheet = writer.sheets['Horarios Docentes']
+
+        # Ajustar el formato de las celdas: Wrap text (ajustar texto dentro de las celdas)
+        for idx, row in enumerate(rows, start=2):  # start=2 para saltar el encabezado
+            worksheet.set_row(idx - 1, None, None, {'text_wrap': True})  # Habilitar el ajuste de texto para las celdas
+        
+        # Ajustar la columna "Día y Horarios" para que su ancho sea suficiente para mostrar el contenido
+        worksheet.set_column('C:C', 30)  # Ancho de la columna "Día y Horarios"
 
     def exportar_superposiciones(self, writer, superposiciones, horarios):
         """Exporta las superposiciones detectadas a una hoja de Excel si existen."""
         filas_superposiciones = []
-
-        # Filtrar superposiciones para incluir solo las que están en la planilla final
+        
         dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
-        for sup in superposiciones:
-            # Separar la superposición en partes
-            partes = sup.split(" en ")
-            if len(partes) == 2:
-                grupo_info, horario_info = partes
-                grupo, intervalo = horario_info.split(" (")
-                dia = grupo.split()[1].strip(")")
-                
-                # Verificar si esta superposición aparece en el horario final
-                for fila in horarios:
-                    if fila['Grupo'] == grupo and fila['Horario'] == intervalo:
-                        if dia in dias and fila[dia].endswith(f"({partes[0].split()[1]})"):
-                            filas_superposiciones.append([grupo_info, horario_info])
 
-        # Exportar si hay superposiciones filtradas
+        # Verificar si existen superposiciones en los horarios
+        for fila in horarios:
+            grupo = fila['Grupo']
+            intervalo = fila['Horario']
+            for dia in dias:
+                if grupo and fila[dia]:  # Si hay algo asignado en el día
+                    # Verificar si hay una superposición (si existe una barra '/')
+                    if "/" in fila[dia]:
+                        filas_superposiciones.append([grupo, dia, intervalo, fila[dia]])  # Almacenar la superposición
+
+        # Exportar superposiciones si se detectaron
         if filas_superposiciones:
-            df_superposiciones = pd.DataFrame(filas_superposiciones, columns=["Superposición", "Detalles"])
+            df_superposiciones = pd.DataFrame(filas_superposiciones, columns=["Grupo", "Día", "Horario", "Superposición"])
             df_superposiciones.to_excel(writer, sheet_name='Superposiciones', index=False)
+
 
     def ver_datos(self):
         ventana_ver_datos = tk.Toplevel(self.root)
